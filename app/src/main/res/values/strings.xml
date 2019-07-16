@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="favorite_indicator">favorite indicator</string>
+    <string name="location_name">location name</string>
+    <string name="location_lon">location lon</string>
+    <string name="location_lat">location lat</string>
+    <string name="view_delimiter">view delimiter</string>
+</resources>
