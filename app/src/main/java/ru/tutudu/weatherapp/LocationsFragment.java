@@ -1,20 +1,26 @@
 package ru.tutudu.weatherapp;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 
-public class LocationsFragment extends Fragment {
+
+public class LocationsFragment extends Fragment{
     private static String LOCATIONS_TYPE = "locations_type";
     private boolean onlyFavorites;
     RecyclerView recyclerView;
     LinearLayoutManager llManager;
-    ScrollAdapter adapter;
+    ScrollAdapter adapter = new ScrollAdapter(new ArrayList<Location>(), null);
+    View.OnClickListener mListener;
+    Activity curActivity;
 
 
     public static LocationsFragment newInstance(boolean locationType) {
@@ -38,6 +44,23 @@ public class LocationsFragment extends Fragment {
     }
 
 
+    public View.OnClickListener getUpdateListener() {
+        Fragment mThis = this;
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.setReorderingAllowed(false);
+                ft.detach(mThis).attach(mThis).commit();
+            }
+        };
+    }
+
+    public void setListener(View.OnClickListener onClickListener) {
+        mListener = onClickListener;
+    }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,10 +76,16 @@ public class LocationsFragment extends Fragment {
             adapter = new ScrollAdapter(App.getInstance().getDatabase().locationDao().getAllFavorites(),
                     getContext());
         }
+        adapter.setFragmentListener(mListener);
+        adapter.setActivity(curActivity);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(llManager);
-
         return view;
     }
 
+
+    public void setActivity(Activity locationsActivity) {
+        curActivity = locationsActivity;
+        adapter.setActivity(curActivity);
+    }
 }

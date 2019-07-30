@@ -7,6 +7,7 @@ import android.arch.persistence.room.Entity;
 public class Location {
     double lon;
     double lat;
+    String city, country;
     public String name;
     public boolean isFavorite;
 }

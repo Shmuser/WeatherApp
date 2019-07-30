@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="favorite_indicator">favorite indicator</string>
+    <string name="location_name">location name</string>
+    <string name="location_lon">location lon</string>
+    <string name="location_lat">location lat</string>
+    <string name="weather_api_key">2fe9cf00af6efdea412a4e7ba7617a04</string>
+    <string name="cancel">Отмена</string>
+    <string name="ok">ОК</string>
+    <string name="step3title">Это избранная локация?</string>
+    <string name="step1title">Введите название локации</string>
+    <string name="step2title">Выберите место</string>
+    <string name="step2location">Локация</string>
+    <string name="step2choose">Подтвердить</string>
+    <string name="alocations_title">Локации</string>
+    <string name="alocations_frag1title">Все локации</string>
+    <string name="alocations_frag2title">Избранные</string>
+    <string name="delete_dialog_title">Внимание</string>
+    <string name="delete_dialog_message">Удалить эту локацию?</string>
+    <string name="stepperHint">Введите название локации</string>
+    <string name="windN">северный</string>
+    <string name="windNW">северо-западный</string>
+    <string name="windW">западный</string>
+    <string name="windSW">юго-западный</string>
+    <string name="windS">южный</string>
+    <string name="windSE">юго-восточный</string>
+    <string name="windE">восточный</string>
+    <string name="windNE">северо-восточный</string>
+    <string name="windTitle">ветер</string>
+    <string name="windSpeed">м/с</string>
+    <string name="pressureTitle">давление</string>
+    <string name="pressureM">мм. рт. ст.</string>
+    <string name="humidityTitle">влажность</string>
+    <string name="morning">утро</string>
+    <string name="day">день</string>
+    <string name="evening">вечер</string>
+    <string name="night">ночь</string>
+    <string name="stepperException">Что-то пошло не так. Возможно вы хотите добавить локацию с уже используемыми координатами?</string>
+    <string name="change_language">Изменить язык</string>
+    <string name="internet_info">Нет соединения с интернетом</string>
+
+</resources>

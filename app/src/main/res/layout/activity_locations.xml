@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ru.tutudu.weatherapp.LocationsActivity">
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ru.tutudu.weatherapp.LocationsActivity">
+    android:id="@+id/linearlayout"
+    >
 
 
     <android.support.v7.widget.Toolbar
@@ -18,26 +23,40 @@
         android:fitsSystemWindows="true"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:background="@color/colorPrimary"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:weightSum="7">
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/earth"
-                android:paddingLeft="5dp" />
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_weight="5"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="Locations"
+                android:text="@string/alocations_title"
+                android:gravity="center_vertical"
                 android:textColor="@android:color/white"
-                android:textSize="25dp"
-                android:paddingLeft="5dp"
-            />
+                android:textSize="25sp" />
+            <ImageView
+                android:id="@+id/language_button"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:tag="1"
+                android:layout_height="match_parent"
+                android:src="@drawable/ru_flag"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"/>
 
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
@@ -58,5 +77,15 @@
             app:tabMode="fixed"/>
     </android.support.v4.view.ViewPager>
 
-
 </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:src="@drawable/baseline_add"
+        app:layout_anchor="@id/linearlayout"
+        app:layout_anchorGravity="bottom|right|end"/>
+</android.support.design.widget.CoordinatorLayout>
