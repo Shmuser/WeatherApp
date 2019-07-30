@@ -263,6 +263,7 @@ public class StepperActivity extends AppCompatActivity {
 
     private void mapInit(GoogleMap googleMap) {
         gMap = googleMap;
+        gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(55.7507, 37.6177), 7));
         gMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng latLng) {
